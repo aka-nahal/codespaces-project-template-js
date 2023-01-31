@@ -1,10 +1,20 @@
-/**
- * Entry point of application, where App is rendered within the div with the id of "app" 
- */
-
 import React from "react";
-import { render } from "react-dom";
-
+import { createRoot } from "react-dom/client";
 import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import "./global.css";
 
-render(<App></App>, document.getElementById("app"));
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
